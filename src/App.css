@@ -11,47 +11,59 @@ body{
   text-align: center;
   height: 100vh;
   width: 98vw;
-   background-color: aqua; 
+  background-color: #cbc4b8; 
+   color: #2b3120;
 }
 .container{
-  width: 40vw;
-  height: 70vh;
-  /* display: grid; 
-  grid-template:repeat(6,1fr)/repeat(6,1fr); */
-  background-color:black
+  width: 50vw;
+  height: 80vh;
+  background-color:#ededed ;
+  
 }
+.header{
+display: flex; 
+ align-items: center;
+justify-content: space-around; 
+width: 100vw;
+height: 5vh;
+}
+
 .square{
-  background-color: white;
-  border: 1px solid skyblue;
+  background-color: #ededed  ;
+  border: 1px solid #846d63;
   font-weight: 5;
+  font-size: 24px;
+  box-sizing:content-box;
+  padding: 0;
 }
 .inputs{
   display: flex;
-  flex-direction: row;
-}
-/* .nextlevel{
-  background-color: aqua;
-  display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-around;
+  /* background-color: rebeccapurple; */
+  width: 8vw;
+  height: 45vh;
 }
+
 .btns{
   display: flex;
   align-items: center;
   justify-content: space-around;
-  background-color: rgb(128, 128, 128);
-  width: 5rem;
+  background-color: transparent ;
+  /* width: 5rem;
   height: 2rem;
   margin-top: 20px;
   margin-left: 12rem;
- border-radius: 40%;
+ border-radius: 40%; */
 }
 .btn{
-  width: 5rem;
+  background-color: #ededed ;
+  /* width: 5rem;
   height: 2rem;
-  border-radius: 50%;
+  border-radius: 50%; */
 }
-.hearts{
-  margin: 1rem;
-} */
-/* .save{} */
+ 
+.save ,.select{
+  background-color: #ededed ;
+  font-size: 1rem;
+}
