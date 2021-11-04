@@ -24,10 +24,9 @@ const Game = () => {
     )
     let [id, setId] = React.useState(1)
     const [select, setSelect] = React.useState('')
-    const [time ,setTime] =React.useState('')
-    // const { minutes = 0, seconds = 0} = MinSecs
-    // const [[mins, secs], setTime] = React.useState([minutes, seconds]);
-    //const sizeArray = [6,9,11,16]
+    const [time ,setTime] =React.useState(true)
+  
+
 
     // React.useEffect(() => {
     //     getPuzzleFromApi()
@@ -100,7 +99,7 @@ const Game = () => {
         if (index > size && index !== (size) && index !== (size * 2) && index !== (size * 3) && index !== (size * 4)) {
             let squareCopy = [...squares]
             if (showBtn === '⬛') {
-                if (puzzle[index] === 1) {
+                if (puzzle[index] === 1 && squareCopy[index]=== "") {
                     squareCopy[index] = '⬛'
                     stepNumber = stepNumber + 1
                     setStepNumber(stepNumber)
@@ -113,6 +112,7 @@ const Game = () => {
                     } else {
                         setHearts([])
                         setShow(true)
+                        setTime(false)
                     }
                 }
             }
@@ -128,6 +128,7 @@ const Game = () => {
                     } else {
                         setHearts([])
                         setShow(true)
+                        setTime(false)
                     }
                 }
             }
@@ -161,7 +162,7 @@ const Game = () => {
                 </div >
             </div>
             {
-                show ?<h3 style={{fontSize:'36px'}}>Game over 🤯🤯</h3>  :
+                show ?<h3 style={{fontSize:'36px'}} >Game over 🤯🤯</h3>  :
                     <div style={{display:'flex' , justifyContent: 'space-around' }}>
                         <div  >
                             <Border squares={squares} costomFun={test} show={show} size={size} />
