@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect } from "react";
 import Border from "./border";
 import Timer from "./Timer/timer";
-
+import { useStopwatch } from 'react-timer-hook'
 
 
 const Game = () => {
@@ -25,8 +25,8 @@ const Game = () => {
     let [id, setId] = React.useState(1)
     const [select, setSelect] = React.useState('')
     const [time ,setTime] =React.useState(true)
+    const {seconds ,minutes, reset} = useStopwatch({autoStart:time })
   
-
 
     // React.useEffect(() => {
     //     getPuzzleFromApi()
@@ -71,7 +71,7 @@ const Game = () => {
         console.log(found.stepNum)
         setSize(found.size)
         setId(found.id)
-        setTime(true)
+        reset()
     }
 
     const nextLevel = () => {
@@ -91,6 +91,8 @@ const Game = () => {
             setSize(found.size)
             setHearts(['❤️', '❤️', '❤️'])
             setTime(false)
+            reset()
+
         }
     }
 
@@ -145,13 +147,12 @@ const Game = () => {
 
 
 
-
     return (
         <div>
             <h1>Nonogram</h1>
             <div className='header' style={{ display: 'flex', justifyContent: 'space-around' }}>
                 <div className='timer' style={{ marginLeft: '100ox' }}>
-                    <Timer time={time}/>
+                <span>{minutes}:{seconds}</span> 
                 </div>
                 <div className='hearts' >
                     {
