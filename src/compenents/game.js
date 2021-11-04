@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect } from "react";
 import Border from "./border";
-import Timer from "./Timer/timer";
 import { useStopwatch } from 'react-timer-hook'
 
 
